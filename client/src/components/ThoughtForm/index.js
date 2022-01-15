@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMutation } from '@apollo/client';
 
 const ThoughtForm = () => {
   const [thoughtText, setText] = useState('');
@@ -20,7 +21,7 @@ const ThoughtForm = () => {
   return (
     <div>
       <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
-        Character Count: 0/280
+        Character Count: {characterCount}/280
       </p>
       <form className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}>
